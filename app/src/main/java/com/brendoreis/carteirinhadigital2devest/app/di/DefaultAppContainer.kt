@@ -1,5 +1,6 @@
 package com.brendoreis.carteirinhadigital2devest.app.di
 
+import com.brendoreis.carteirinhadigital2devest.feature.professor.turmas.domain.repository.TurmaRepository
 import com.brendoreis.carteirinhadigital2devest.core.auth.SessionTokenStore
 import com.brendoreis.carteirinhadigital2devest.core.network.NetworkClient
 import com.brendoreis.carteirinhadigital2devest.feature.aluno.unidadescurriculares.data.remote.service.UnidadeCurricularApi
@@ -11,10 +12,10 @@ import com.brendoreis.carteirinhadigital2devest.feature.login.data.repository.Fa
 import com.brendoreis.carteirinhadigital2devest.feature.login.domain.repository.LoginRepository
 import com.brendoreis.carteirinhadigital2devest.feature.professor.turmas.data.remote.service.TurmaApi
 import com.brendoreis.carteirinhadigital2devest.feature.professor.turmas.data.repository.ApiTurmaRepositoryImpl
-import com.brendoreis.carteirinhadigital2devest.feature.professor.turmas.domain.repository.TurmaRepository
 import com.brendoreis.carteirinhadigital2devest.feature.professor.unidadescurriculares.data.remote.service.ProfessorUnidadeCurricularApi
 import com.brendoreis.carteirinhadigital2devest.feature.professor.unidadescurriculares.data.repository.ApiProfessorUnidadeCurricularRepositoryImpl
 import com.brendoreis.carteirinhadigital2devest.feature.professor.unidadescurriculares.domain.repository.ProfessorUnidadeCurricularRepository
+
 
 class DefaultAppContainer : AppContainer {
     override val sessionTokenStore: SessionTokenStore = SessionTokenStore()

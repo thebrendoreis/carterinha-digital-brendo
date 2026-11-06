@@ -22,6 +22,7 @@ import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import com.brendoreis.carteirinhadigital2devest.feature.professor.turmas.presentation.TurmaViewModel
 import com.brendoreis.carteirinhadigital2devest.feature.professor.turmas.presentation.component.TurmaCard
 
+
 @Composable
 fun TurmasProfessorScreen(viewModel: TurmaViewModel, modifier: Modifier = Modifier) {
     val state by viewModel.uiState.collectAsStateWithLifecycle()

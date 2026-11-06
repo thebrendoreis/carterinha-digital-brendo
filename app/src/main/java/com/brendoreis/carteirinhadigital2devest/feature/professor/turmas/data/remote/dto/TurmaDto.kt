@@ -1,5 +1,4 @@
 package com.brendoreis.carteirinhadigital2devest.feature.professor.turmas.data.remote.dto
-
 import com.brendoreis.carteirinhadigital2devest.feature.professor.turmas.domain.model.Turma
 import kotlinx.serialization.Serializable
 
@@ -14,14 +13,16 @@ data class TurmaDto(
     val horarioInicio: String,
     val horarioFim: String
 ) {
-    fun toDomain() = Turma(
-        id = id,
-        codigo = codigo,
-        curso = curso,
-        semestre = semestre,
-        quantidadeAlunos = quantidadeAlunos,
-        diasSemana = diasSemana,
-        horarioInicio = horarioInicio,
-        horarioFim = horarioFim
-    )
+    fun toDomain(): Turma {
+        return Turma(
+            id = id,
+            codigo = codigo,
+            curso = curso,
+            semestre = semestre,
+            quantidadeAlunos = quantidadeAlunos,
+            diasSemana = diasSemana,
+            horarioInicio = horarioInicio,
+            horarioFim = horarioFim
+        )
+    }
 }

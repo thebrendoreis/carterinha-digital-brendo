@@ -1,14 +1,12 @@
 package com.brendoreis.carteirinhadigital2devest.feature.professor.home.presentation.screen
 
+import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.layout.widthIn
-import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.RoundedCornerShape
-import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.MaterialTheme
@@ -33,33 +31,23 @@ fun HomeProfessorScreen(
     Column(
         modifier = modifier
             .fillMaxSize()
-            .verticalScroll(rememberScrollState())
-            .padding(horizontal = 20.dp, vertical = 28.dp),
-        verticalArrangement =
-            Arrangement.spacedBy(20.dp),
-        horizontalAlignment = androidx.compose.ui.Alignment.CenterHorizontally
+            .padding(24.dp),
+        verticalArrangement = Arrangement.spacedBy(24.dp)
     ) {
         Text(
-            text = "Olá, ${usuarioLogado.nome.substringBefore(' ')}",
-            style = MaterialTheme.typography.headlineLarge,
-            fontWeight = FontWeight.Bold,
-            modifier = Modifier.widthIn(max = 560.dp).fillMaxWidth()
-        )
-
-        Text(
-            text = "Acompanhe suas atividades acadêmicas.",
-            style = MaterialTheme.typography.bodyLarge,
-            color = MaterialTheme.colorScheme.onSurfaceVariant,
-            modifier = Modifier.widthIn(max = 560.dp).fillMaxWidth()
+            text = "Olá, ${usuarioLogado.nome}",
+            style = MaterialTheme.typography.headlineSmall,
+            fontWeight = FontWeight.Bold
         )
 
         Card(
-            modifier = Modifier.widthIn(max = 560.dp).fillMaxWidth(),
-            shape = RoundedCornerShape(20.dp),
+            modifier = Modifier.fillMaxWidth(),
+            shape = RoundedCornerShape(12.dp),
+            border = BorderStroke(1.5.dp, MaterialTheme.colorScheme.primary),
             colors = CardDefaults.cardColors(
-                containerColor = MaterialTheme.colorScheme.primaryContainer
+                containerColor = MaterialTheme.colorScheme.surface
             ),
-            elevation = CardDefaults.cardElevation(defaultElevation = 0.dp)
+            elevation = CardDefaults.cardElevation(defaultElevation = 2.dp)
         ) {
             Column(
                 modifier = Modifier.padding(20.dp),
@@ -67,18 +55,19 @@ fun HomeProfessorScreen(
             ) {
                 Text(
                     text = "Professor",
-                    style = MaterialTheme.typography.titleLarge,
-                    color = MaterialTheme.colorScheme.onPrimaryContainer
+                    style = MaterialTheme.typography.titleMedium,
+                    fontWeight = FontWeight.Bold,
+                    color = MaterialTheme.colorScheme.primary
                 )
 
                 Text(
-                    text = "Matrícula  •  ${usuarioLogado.matricula}",
-                    color = MaterialTheme.colorScheme.onPrimaryContainer
+                    text = "Matrícula: ${usuarioLogado.matricula}",
+                    color = MaterialTheme.colorScheme.onSurface
                 )
 
                 Text(
                     text = "Acesse suas turmas e unidades curriculares.",
-                    color = MaterialTheme.colorScheme.onPrimaryContainer
+                    color = MaterialTheme.colorScheme.onSurfaceVariant
                 )
             }
         }
@@ -86,13 +75,13 @@ fun HomeProfessorScreen(
         NavigationButton(
             text = "Minhas Turmas",
             onClick = onTurmasClick,
-            modifier = Modifier.widthIn(max = 560.dp).fillMaxWidth()
+            modifier = Modifier.fillMaxWidth()
         )
 
         NavigationButton(
             text = "Unidades Curriculares",
             onClick = onUnidadesCurricularesClick,
-            modifier = Modifier.widthIn(max = 560.dp).fillMaxWidth()
+            modifier = Modifier.fillMaxWidth()
         )
     }
 }

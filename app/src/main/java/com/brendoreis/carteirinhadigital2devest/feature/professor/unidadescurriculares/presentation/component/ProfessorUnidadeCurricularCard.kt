@@ -14,7 +14,6 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
-import com.brendoreis.carteirinhadigital2devest.feature.professor.turmas.presentation.component.toDiasPt
 import com.brendoreis.carteirinhadigital2devest.feature.professor.unidadescurriculares.domain.model.ProfessorUnidadeCurricular
 
 @Composable
@@ -44,7 +43,7 @@ fun ProfessorUnidadeCurricularCard(
                 Text("${unidade.aulasRealizadas} de ${unidade.quantidadeAulas}", style = MaterialTheme.typography.labelLarge)
             }
             Text(
-                "${unidade.diasSemana.toDiasPt()}  •  ${unidade.horarioInicio}–${unidade.horarioFim}",
+                "${unidade.diasSemana.joinToString(", ")}  •  ${unidade.horarioInicio}–${unidade.horarioFim}",
                 style = MaterialTheme.typography.bodyMedium,
                 color = MaterialTheme.colorScheme.onSurfaceVariant
             )

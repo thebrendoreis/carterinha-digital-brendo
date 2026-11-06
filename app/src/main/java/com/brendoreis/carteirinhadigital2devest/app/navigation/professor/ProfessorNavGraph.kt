@@ -14,15 +14,15 @@ import com.brendoreis.carteirinhadigital2devest.app.navigation.ProfileGuard
 import com.brendoreis.carteirinhadigital2devest.app.ui.AppShell
 import com.brendoreis.carteirinhadigital2devest.feature.login.domain.model.PerfilAcesso
 import com.brendoreis.carteirinhadigital2devest.feature.login.domain.model.UsuarioLogado
-import com.brendoreis.carteirinhadigital2devest.feature.professor.home.presentation.screen.HomeProfessorScreen
-import com.brendoreis.carteirinhadigital2devest.feature.professor.turmas.domain.repository.TurmaRepository
-import com.brendoreis.carteirinhadigital2devest.feature.professor.turmas.presentation.TurmaViewModel
-import com.brendoreis.carteirinhadigital2devest.feature.professor.turmas.presentation.factory.TurmaViewModelFactory
 import com.brendoreis.carteirinhadigital2devest.feature.professor.turmas.presentation.screen.TurmasProfessorScreen
 import com.brendoreis.carteirinhadigital2devest.feature.professor.unidadescurriculares.domain.repository.ProfessorUnidadeCurricularRepository
 import com.brendoreis.carteirinhadigital2devest.feature.professor.unidadescurriculares.presentation.ProfessorUnidadeCurricularViewModel
 import com.brendoreis.carteirinhadigital2devest.feature.professor.unidadescurriculares.presentation.factory.ProfessorUnidadeCurricularViewModelFactory
 import com.brendoreis.carteirinhadigital2devest.feature.professor.unidadescurriculares.presentation.screen.ProfessorUnidadesCurricularesScreen
+import com.brendoreis.carteirinhadigital2devest.feature.professor.home.presentation.screen.HomeProfessorScreen
+import com.brendoreis.carteirinhadigital2devest.feature.professor.turmas.domain.repository.TurmaRepository
+import com.brendoreis.carteirinhadigital2devest.feature.professor.turmas.presentation.TurmaViewModel
+import com.brendoreis.carteirinhadigital2devest.feature.professor.turmas.presentation.factory.TurmaViewModelFactory
 import kotlinx.coroutines.flow.StateFlow
 
 fun NavGraphBuilder.professorNavGraph(

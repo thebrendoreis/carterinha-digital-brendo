@@ -2,6 +2,7 @@ package com.brendoreis.carteirinhadigital2devest.feature.professor.turmas.presen
 
 import com.brendoreis.carteirinhadigital2devest.feature.professor.turmas.domain.model.Turma
 
+
 data class TurmaUiState(
     val isLoading: Boolean = false,
     val turmas: List<Turma> = emptyList(),
