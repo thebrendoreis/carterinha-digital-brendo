@@ -9,6 +9,12 @@ import com.brendoreis.carteirinhadigital2devest.feature.login.data.remote.servic
 import com.brendoreis.carteirinhadigital2devest.feature.login.data.repository.ApiLoginRepositoryImpl
 import com.brendoreis.carteirinhadigital2devest.feature.login.data.repository.FakeAuthRepository
 import com.brendoreis.carteirinhadigital2devest.feature.login.domain.repository.LoginRepository
+import com.brendoreis.carteirinhadigital2devest.feature.professor.turmas.data.remote.service.TurmaApi
+import com.brendoreis.carteirinhadigital2devest.feature.professor.turmas.data.repository.ApiTurmaRepositoryImpl
+import com.brendoreis.carteirinhadigital2devest.feature.professor.turmas.domain.repository.TurmaRepository
+import com.brendoreis.carteirinhadigital2devest.feature.professor.unidadescurriculares.data.remote.service.ProfessorUnidadeCurricularApi
+import com.brendoreis.carteirinhadigital2devest.feature.professor.unidadescurriculares.data.repository.ApiProfessorUnidadeCurricularRepositoryImpl
+import com.brendoreis.carteirinhadigital2devest.feature.professor.unidadescurriculares.domain.repository.ProfessorUnidadeCurricularRepository
 
 class DefaultAppContainer : AppContainer {
     override val sessionTokenStore: SessionTokenStore = SessionTokenStore()
@@ -25,6 +31,14 @@ class DefaultAppContainer : AppContainer {
         networkClient.createAuthenticated(UnidadeCurricularApi::class.java)
     }
 
+    private val turmaApi: TurmaApi by lazy {
+        networkClient.createAuthenticated(TurmaApi::class.java)
+    }
+
+    private val professorUnidadeCurricularApi: ProfessorUnidadeCurricularApi by lazy {
+        networkClient.createAuthenticated(ProfessorUnidadeCurricularApi::class.java)
+    }
+
     override val loginRepository: LoginRepository by lazy {
         if (USE_FAKE_LOGIN_REPOSITORY) {
             FakeAuthRepository()
@@ -34,6 +48,14 @@ class DefaultAppContainer : AppContainer {
     }
     override val unidadeCurricularRepository: UnidadeCurricularRepository by lazy {
         ApiUnidadeCurricularRepositoryImpl(api = unidadeCurricularApi)
+    }
+
+    override val turmaRepository: TurmaRepository by lazy {
+        ApiTurmaRepositoryImpl(api = turmaApi)
+    }
+
+    override val professorUnidadeCurricularRepository: ProfessorUnidadeCurricularRepository by lazy {
+        ApiProfessorUnidadeCurricularRepositoryImpl(api = professorUnidadeCurricularApi)
     }
 
     companion object {
